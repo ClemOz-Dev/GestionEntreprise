@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Suppression de la tâche {{ task.id }} {% endblock title %}
+
+{% block content %}
+  <a href="{% url 'url_task_list' %}">Retour à la liste</a>
+
+  <h3> La tâche {{ task.name }} a bien été supprimée </h3>
+{% endblock content %}

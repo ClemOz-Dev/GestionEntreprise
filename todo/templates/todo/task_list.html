@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Exploration de la liste de tâches{% endblock title %}
+{% block content %}
+<ul>
+    {% for task in tasks %}
+        <li>
+        Tâche : {{ task.id }} -<a href="{% url 'url_task_details' task.id %}"> {{ task.name }}</a> - {{ task.due_date }} -
+        {% comment %} {% lorem 3 p %} {% endcomment %}
+        {% if task.description|length >= 15 %}
+            {{ task.description|truncatechars:30 }}
+        {% endif %}
+        </li>
+    {% endfor %}
+<ul>
+{% endblock content %}
